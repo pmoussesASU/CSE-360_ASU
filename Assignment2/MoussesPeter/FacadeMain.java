@@ -66,15 +66,17 @@
                  System.out.println("********** Add all the numbers together ***********");
                  int count = 0;
                  for (int i : numberList) {
-                         count++;
+                         count+=i;
                  }
                  System.out.println(count);
          }
          void subtractNumbers() {
                  System.out.println("********** Subtract all the numbers from 100 ***********");
+                 int sum = 0;
                  for (int i : numberList) {
-                         System.out.println(i - 100);
+                         sum+=i;
                  }
+                 System.out.println(sum - 100);
          }
          void multiplyNumbers() {
                  System.out.println("********** Multiply all the numbers together ***********");

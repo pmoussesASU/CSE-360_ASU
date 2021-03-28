@@ -16,12 +16,11 @@ class NumberList {
 }
 class NumberIterator extends NumberList {
         ArrayList<Integer> list = new ArrayList<Integer>();
-        NumberIterator() {}
-        void populate(ArrayList<Integer> l) {
+        NumberIterator(ArrayList<Integer> l) {
                 list = l;
         }
         boolean hasNext() {
-                if (list.next()) return true;
+                if ( list.hasNext() ) return true;
                 else return false;
         }
 }
@@ -41,15 +40,10 @@ class NumberIterator extends NumberList {
          * TODO: Create an iterator to go through the numberList and print each number.
          * If a number is greater than 500, remove it from the list.
          *****/
-        NumberIterator iterator = new NumberIterator();
-        iterator.populate(numberlist.getList());
+        NumberIterator iterator = new NumberIterator(numberList.getList());
         System.out.println("Initial 10 numbers in the numberList");
-        while( iterator.hasNext() ) {
-                System.out.println(iterator.next());
-
-                if (number > 500) {
-                    iterator.remove();
-                }
+        for (int i = 0; i < iterator.list.size(); i++) {
+                
         }
 
         System.out.println("********** Removed numbers greater than 500 ***********");
