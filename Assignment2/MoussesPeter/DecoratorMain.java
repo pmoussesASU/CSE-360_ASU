@@ -3,7 +3,39 @@
  * CSE 360: Assignment 2
  * Template file for starting the Decorator practice program
  */
+ interface NumberList {
+        public int[] array = new int[11];
+        public int operate();
+ }
+class Decorator implements NumberList {
+        protected NumberList numberList;
 
+        public Decorator(NumberList n) {
+                this.numberList = n;
+        }
+
+        @Override
+        public int operate() {
+                return this.numberList.operate();
+        }
+}
+
+class add extends Decorator {
+        @Override
+        public operate(Numberlist n) {
+                super(n);
+        }
+
+        @Override
+        public int operate() {
+                int sum = 0;
+                for (int i : super.numberList.array) {
+                        sum+=i;
+                }
+                return sum;
+        }
+
+}
  public class DecoratorMain {
 
     public static void main( String[] args ) {
