@@ -40,16 +40,16 @@ class add extends Decorator {
 
     public static void main( String[] args ) {
 
-        /*****
-         * TODO: Add 10 random numbers between [0, 10) to a numberList
-         *****/
-
-
-        /*****
-         * TODO: Go through the numberList, printing each number.
-         *****/
-        System.out.println("Initial 5 numbers in the numberList");
-        // put code implementation here
+            /*****
+             * TODO: Add 10 random numbers between [0, 10) to a numberList
+             * TODO: Go through the numberList, printing each number.
+             *****/
+            int[] numberList = new int[5];
+            System.out.println("Initial 5 numbers in the numberList");
+            for (int i = 0; i < numberList.length; i++) {
+                    numberList[i] = (int)(Math.random() * 10);
+                    System.out.println(numberList[i]);
+            }
 
         /*****
          * TODO: Create three decorator classes

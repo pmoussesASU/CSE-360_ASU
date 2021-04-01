@@ -19,8 +19,8 @@ class NumberIterator extends NumberList {
         NumberIterator(ArrayList<Integer> l) {
                 list = l;
         }
-        boolean hasNext() {
-                if ( list.hasNext() ) return true;
+        boolean hasNext(int i) {
+                if ( list.get(i).hasNext() ) return true;
                 else return false;
         }
 }
@@ -43,7 +43,8 @@ class NumberIterator extends NumberList {
         NumberIterator iterator = new NumberIterator(numberList.getList());
         System.out.println("Initial 10 numbers in the numberList");
         for (int i = 0; i < iterator.list.size(); i++) {
-                
+                System.out.println(iterator.list.get(i));
+                if (iterator.list.get(i) > 500) iterator.list.remove(i);
         }
 
         System.out.println("********** Removed numbers greater than 500 ***********");
@@ -52,8 +53,8 @@ class NumberIterator extends NumberList {
          * TODO: Go through the numberList again and print each number.
          *****/
          System.out.println("Numbers that are now in the numberList");
-         while( iterator.hasNext() ) {
-             // print number
+         for (int i = 0; i < iterator.list.size(); i++) {
+                 System.out.println(iterator.list.get(i));
          }
     }
  }
